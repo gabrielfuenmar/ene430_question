@@ -63,7 +63,7 @@ server = app.server
 
 # Create global chart template
 
-MAPBOX_TOKEN = "pk.eyJ1IjoiZ2FicmllbGZ1ZW5tYXIiLCJhIjoiY2s4ZXUxNGVpMDBmMjNkbWwxYXNjNjY0aCJ9.7nklUvXd2r0H7LYeY0EEAA"
+MAPBOX_TOKEN =os.environ.get('MAPBOX_TOKEN', None)
 
 layout_map = dict(
     height=600,
