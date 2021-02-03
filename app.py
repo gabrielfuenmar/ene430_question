@@ -3,22 +3,15 @@
 Author:Gabriel Fuentes
 gabriel.fuentes@snf.no'''
 
-# Import required libraries
 import pathlib
 import dash
 from dash.dependencies import Input, Output, State, ClientsideFunction
 import dash_core_components as dcc
 import dash_html_components as html
-import plotly.figure_factory as ff
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import plotly.express as px
-from dateutil.relativedelta import *
-from datetime import datetime
 
-from controls import TYPE_COLORS,PORTS_COLORS
 ##DataFrames
-from data_filtering import processed_data
 import pandas as pd
 import geopandas as gpd
 import os
