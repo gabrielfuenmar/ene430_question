@@ -59,7 +59,7 @@ server = app.server
 MAPBOX_TOKEN =os.environ.get('MAPBOX_TOKEN', None)
 
 layout_map = dict(
-    height=600,
+    height=400,
     paper_bgcolor='#30333D',
     plot_bgcolor='#30333D',
     margin=dict(l=10, r=10, b=10, t=40),
@@ -70,8 +70,8 @@ layout_map = dict(
     mapbox=dict(
         accesstoken=MAPBOX_TOKEN,
         style='mapbox://styles/gabrielfuenmar/ckhs87tuj2rd41amvifhb26ad',
-        center=dict(lon=-79.55, lat=8.93),
-        zoom=3,
+        center=dict(lon=-85.00, lat=8.93),
+        zoom=2,
     ),
     showlegend=False,
 )
@@ -256,12 +256,13 @@ def trip_map(bunker=None,destination=None,nav=None,pc=None,trigger=False):
     ###Map
     if values_in.shape[0]!=0 and trigger is True:
         map_fig=px.choropleth_mapbox(pres,
-                            geojson=pres.geometry,
-                            locations=pres.index,
-                            color=pres["level-value"],
-                            color_discrete_map=pd.Series(pres.stroke.values,index=pres["level-index"]).to_dict(),
-                            opacity=0.3,
-                            hover_name=pres.title)
+                        geojson=pres.geometry,
+                        locations=pres.index,
+                        color=pres["level-value"],
+                        color_continuous_scale=px.colors.sequential.Inferno_r,
+                        range_color=(900, 1100),
+                        opacity=0.3,
+                        hover_name=pres.title)
         map_fig.update_layout(layout_map)
         map_fig.layout.coloraxis.colorbar.title = 'Pa'
         
@@ -285,7 +286,8 @@ def trip_map(bunker=None,destination=None,nav=None,pc=None,trigger=False):
                         geojson=pres.geometry,
                         locations=pres.index,
                         color=pres["level-value"],
-                        color_discrete_map=pd.Series(pres.stroke.values,index=pres["level-index"]).to_dict(),
+                        color_continuous_scale=px.colors.sequential.Inferno_r,
+                        range_color=(900, 1100),
                         opacity=0.3,
                         hover_name=pres.title)
         map_fig_2.update_layout(layout_map)
