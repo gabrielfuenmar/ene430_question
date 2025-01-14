@@ -69,7 +69,7 @@ layout_map = dict(
     title="<b>Route Summary</b>",
     mapbox=dict(
         accesstoken=MAPBOX_TOKEN,
-        style='mapbox://styles/gabrielfuenmar/ckhs87tuj2rd41amvifhb26ad',
+        style='mapbox://styles/gabrielfuenmar/ckkmdsqrm4ngq17o21tnno1ce',
         center=dict(lon=-85.00, lat=8.93),
         zoom=2,
     ),
