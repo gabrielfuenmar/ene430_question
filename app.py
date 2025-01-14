@@ -144,7 +144,7 @@ app.layout = html.Div(
                 html.Div(
                     [
                         html.A(html.Button("Refresh", id="refresh-button")
-                               ,href="https://ene430.herokuapp.com"), 
+                               ,href="https://ene430-4ca52086d022.herokuapp.com"), 
                         html.A(
                             html.Button("Developer", id="home-button"),
                             href="https://gabrielfuentes.org",
